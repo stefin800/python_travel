@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'regstyle.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>register</title>
+</head>
+
+<body>
+<form class="form1" action="register" method="post">
+    {% csrf_token %}
+  <div class="main">
+    <p class="sign" align="center">REGISTER</p>
+      <input class="un " type="text" name="username" align="center" placeholder="enter your Username">
+      <input class="fn " type="text" name="first_name" align="center" placeholder="enter your first name">
+      <input class="ln " type="text" name="last_name" align="center" placeholder="enter your last name">
+      <input class="em " type="text" name="email" align="center" placeholder="enter your email address">
+      <input class="pass" type="password" name="password" align="center" placeholder="enter your Password">
+      <input class="cpass" type="password" name="password1" align="center" placeholder="confirm your Password">
+      <input type="submit" class="submit" align="center">
+      {% for msg in messages %}
+<h2 align="center">{{msg}}</h2>
+{% endfor %}
+  </div>
+</form>
+
+
+</body>
+
+</html>
